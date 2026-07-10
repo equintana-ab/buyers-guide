@@ -7,11 +7,10 @@
 }
 
 .hero-eyebrow {
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--blue);
   margin-bottom: 14px;
   background: #e5f9fe;
   width: fit-content;
@@ -61,7 +60,7 @@
 }
 
 .search-wrap input::placeholder {
-  color: var(--gray-400);
+  color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
 }
 
 .search-icon {
@@ -69,7 +68,7 @@
   left: 17px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--gray-400);
+  color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
   pointer-events: none;
 }
 
@@ -144,14 +143,14 @@
   border-radius: 40px;
   font-size: 11px;
   font-weight: 400;
-  background: var(--gray-100);
+  background: #f1f5f9;
   color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
 }
 
 .search-no-results {
   padding: 20px 18px;
   font-size: 13px;
-  color: var(--gray-400);
+  color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
   text-align: center;
 }
 /* ── TRUST PILLS ── */
@@ -173,7 +172,7 @@
 }
 
 .trust-item svg {
-  color: var(--blue);
+  color: var(--SecondaryColor-Blue60, #019bf0);
   flex-shrink: 0;
 }
 
@@ -189,13 +188,17 @@
   padding: 36px 0 0;
 }
 
-.section-label {
+.section-label,
+#sectionTitle {
   font-size: 13px;
-  font-weight: 600;
-  color: var(--gray-500);
-  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--PrimaryTextColor-PrimaryText90, #4c525c);
   letter-spacing: 0.08em;
-  margin-bottom: 14px;
+}
+
+.section-label,
+.guides-header {
+  margin-bottom: 16px;
 }
 
 .category-tabs {
@@ -222,7 +225,7 @@
 
 .cat-btn:hover {
   border-color: var(--blue-light);
-  color: var(--blue);
+  color: var(--SecondaryColor-Blue60, #019bf0);
 }
 
 .cat-btn.active {
@@ -249,18 +252,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-}
-
-.guides-header h2 {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--PrimaryTextColor-PrimaryText90, #4c525c);
 }
 
 .guides-count {
-  font-size: 13px;
-  color: var(--gray-400);
+  font-size: 12px;
+  color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
 }
 
 .grid {
@@ -274,7 +270,6 @@
   border-radius: var(--radius-lg);
   background: var(--white);
   border: 1px solid var(--SecondaryGray-LightStroke-SecondaryGray20, #f0f0f0);
-  /* box-shadow: var(--shadow-card); */
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -286,7 +281,7 @@
 
 .card:hover {
   box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
+  transform: translateY(-1px);
 }
 
 .card-image {
@@ -339,7 +334,7 @@
   border-radius: 40px;
   font-size: 11px;
   font-weight: 400;
-  background: var(--gray-100);
+  background: #f1f5f9;
   color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
 }
 
@@ -348,7 +343,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px 16px;
-  border-top: 1px solid var(--gray-100);
 }
 
 .read-time {
@@ -359,7 +353,7 @@
   color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
 }
 
-.read-btn {
+.read-link {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -372,10 +366,11 @@
   border: none;
   cursor: pointer;
   transition: background 0.15s;
+  text-decoration: none;
 }
 
-.read-btn:hover {
-  background: #1d4ed8;
+.read-link:hover {
+  background: #0d95de;
 }
 
 .badge {
@@ -402,7 +397,7 @@
   grid-column: 1 / -1;
   text-align: center;
   padding: 64px 20px;
-  color: var(--gray-400);
+  color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
 }
 
 .empty-state p {

@@ -1,0 +1,90 @@
+<style>
+    .cmsBackground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, #C8F4FE 0%, #B7ECF8 35%, #8EDFF3 70%, #69DDFE 100%);
+        z-index: -1;
+        border-radius: 12px;
+        border: 1px solid #DCDCDC;
+    }
+
+    .cmsBackground::before {
+        content: "";
+        position: absolute;
+        background-image: url("https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/pdp/pdp_widget/Birthday_Sale_Right.png");
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: contain;
+        pointer-events: none;
+        left: -4px;
+        bottom: 0;
+        width: 200px;
+        height: 200px;
+    }
+
+    .cmsBackground::after {
+        content: "";
+        position: absolute;
+        background-image: url(https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/pdp/pdp_widget/Birthday_Sale_Left.png);
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: contain;
+        pointer-events: none;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+    }
+
+    .preOrderCountdown-timerInnerContainer-3hr {
+        color: #3552FC !important;
+    }
+
+    .preOrderCountdown-circleBg-1lj {
+        display: none !important;
+    }
+
+    .addon-root-35b {
+        scroll-margin-top: 200px;
+    }
+</style>
+
+
+<div class="cmsBackground">
+</div>
+
+<script type="text/simi-script">
+(function () {
+  console.log("custom field detected");
+
+  function init() {
+    console.log("init works");
+
+    const specialOffersSection = document.querySelector(".preOrderCountdown-timerInnerContainer-3hr");
+    const targetElement = document.querySelector(".addon-root-35b");
+
+    if (specialOffersSection && targetElement) {
+      specialOffersSection.style.cursor = "pointer";
+
+      specialOffersSection.addEventListener("click", function () {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      });
+    } else {
+      //console.log("Could not find elements");
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>

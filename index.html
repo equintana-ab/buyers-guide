@@ -23,14 +23,9 @@
     }
 
     :root {
-      --blue: #2563eb;
       --blue-light: #3b82f6;
       --SecondaryColor-Blue60: #019bf0;
-      --gray-50: #f8fafc;
-      --gray-100: #f1f5f9;
-      --gray-400: #94a3b8;
       --Gray-gray-700: #4A5568;
-      --gray-700: #334155;
       --SecondaryGray-LightStroke-SecondaryGray20: #F0F0F0;
       --SecondaryGray-SecondaryText-SecondaryGray80: #767676;
       --Gray-gray-700: #4A5568;
@@ -167,9 +162,11 @@
         description: "From window units to split type inverters — find out what capacity, energy efficiency, and features matter most.",
         tags: ["HP", "Inverter vs standard", "Energy Efficiency Rating"],
         readTime: 5,
-        emoji: "❄️",
-        popular: true
+        emoji: "&#x2744;",
+        popular: true,
+        href: "#"
       },
+
       {
         id: 3,
         category: "television",
@@ -178,8 +175,9 @@
         description: "4K, OLED, QLED, refresh rates — here's everything that actually affects your viewing experience.",
         tags: ["HP", "Inverter vs standard", "Energy Efficiency Rating"],
         readTime: 5,
-        emoji: "📺",
-        popular: false
+        emoji: "&#128250;",
+        popular: false,
+        href: "television-buyers-guide"
       },
       {
         id: 4,
@@ -189,8 +187,10 @@
         description: "Headphones, earbuds, soundbars — here's everything that actually affects your listening experience.",
         tags: ["HP", "Inverter vs standard", "Energy Efficiency Rating"],
         readTime: 5,
-        emoji: "🎧",
-        popular: false
+        emoji: "&#x1F3A7;",
+        popular: false,
+        href: "#"
+
       },
       {
         id: 5,
@@ -200,7 +200,7 @@
         description: "Front-load vs top-load, load capacity, wash programs — get the full breakdown before you buy.",
         tags: ["Front vs top load", "Load capacity", "Wash programs"],
         readTime: 5,
-        emoji: "🫧",
+        emoji: "&#x1fae7;",
         popular: false
       },
       {
@@ -211,8 +211,10 @@
         description: "Front-load vs top-load, load capacity, wash programs — get the full breakdown before you buy.",
         tags: ["Front vs top load", "Load capacity", "Wash programs"],
         readTime: 5,
-        emoji: "🍳",
-        popular: false
+        emoji: "&#127867;",
+        popular: false,
+        href: "#"
+
       },
       {
         id: 7,
@@ -222,8 +224,10 @@
         description: "Processor, RAM, storage, display — know exactly what specs matter for your use case.",
         tags: ["RAM", "Processor", "Battery life"],
         readTime: 6,
-        emoji: "💻",
-        popular: false
+        emoji: "&#128187;",
+        popular: false,
+        href: "#"
+
       },
       {
         id: 8,
@@ -233,8 +237,10 @@
         description: "Camera specs, chipsets, OS ecosystems — cut through the marketing and find what you actually need.",
         tags: ["Camera", "Chipset", "Battery"],
         readTime: 5,
-        emoji: "📱",
-        popular: false
+        emoji: "&#128241;",
+        popular: false,
+        href: "#"
+
       },
       {
         id: 9,
@@ -244,8 +250,10 @@
         description: "Drip, espresso, French press, pod machines — pick the right brewing method for your lifestyle.",
         tags: ["Brew type", "Capacity", "Pressure"],
         readTime: 4,
-        emoji: "☕",
-        popular: false
+        emoji: "&#9832;",
+        popular: false,
+        href: "#"
+
       },
       {
         id: 10,
@@ -255,8 +263,10 @@
         description: "Capacity, wattage, preset functions — here's what to look for before buying your air fryer.",
         tags: ["Capacity", "Wattage", "Presets"],
         readTime: 4,
-        emoji: "🍟",
-        popular: false
+        emoji: "&#127839;",
+        popular: false,
+        href: "#"
+
       },
       {
         id: 11,
@@ -266,8 +276,10 @@
         description: "Fabric vs leather, seating depth, frame construction — everything you need to choose the right sofa.",
         tags: ["Material", "Size", "Frame"],
         readTime: 5,
-        emoji: "🛋️",
-        popular: false
+        emoji: "&#128716;",
+        popular: false,
+        href: "#"
+
       },
       {
         id: 12,
@@ -277,8 +289,10 @@
         description: "Firmness levels, spring vs foam, size guide — get the sleep setup that works for your body and budget.",
         tags: ["Firmness", "Material", "Size"],
         readTime: 6,
-        emoji: "🛏️",
-        popular: false
+        emoji: "&#128716;",
+        popular: false,
+        href: "#"
+
       },
       {
         id: 13,
@@ -288,8 +302,10 @@
         description: "Tower vs stand vs desk fans — find the right airflow power and noise level for every room.",
         tags: ["Airflow", "Noise level", "Size"],
         readTime: 4,
-        emoji: "🌀",
-        popular: false
+        emoji: "&#128716;",
+        popular: false,
+        href: "#"
+
       },
       {
         id: 14,
@@ -299,8 +315,10 @@
         description: "Single door, French door, side-by-side — capacity, energy rating, and features explained simply.",
         tags: ["Capacity", "Energy rating", "Door type"],
         readTime: 5,
-        emoji: "🧊",
-        popular: false
+        emoji: "&#128716;",
+        popular: false,
+        href: "#"
+
       }
     ];
 
@@ -404,7 +422,7 @@
     <article class="card" role="button" tabindex="0" aria-label="${g.title}">
       <div class="card-image-wrap">
         <div class="card-image bg-${g.category}">${g.emoji}</div>
-        ${g.popular ? `<span class="badge">🔥 Most popular</span>` : ""}
+        ${g.popular ? `<span class="badge">&#x1f525; Most popular</span>` : ""}
       </div>
       <div class="card-body">
         <span class="card-category color-${g.category}">${g.categoryLabel.toUpperCase()}</span>
@@ -419,12 +437,12 @@
           <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           ${g.readTime} min read
         </span>
-        <button class="read-btn">
+        <a class="read-link" href="/${g.href}">
           Read Guide
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M4.5 12L19.5 12M13.875 18L19.5 12L13.875 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </button>
+        </a>
       </div>
     </article>
   `).join("");
