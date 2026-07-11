@@ -11,19 +11,16 @@
   --color-brand-dark: #1f4fc4;
   --color-brand-bg: #eaf1fe;
 
-  --color-headphone-bg: #fbf6db;
+  --color-headphone-bg: #fffce2;
   --color-headphone-ink: #2b2412;
-  --color-earphone-bg: #e9e6f9;
+  --color-earphone-bg: #eef2ff;
   --color-earphone-ink: #201c3a;
   --color-wired-bg: #e4edf8;
   --color-wired-ink: #16233a;
   --color-wireless-bg: #dff2ea;
   --color-wireless-ink: #123227;
 
-  --font-display: "Poppins", system-ui, sans-serif;
-  --font-body: "Poppins", system-ui, sans-serif;
-
-  --radius-sm: 10px;
+  --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 20px;
 
@@ -31,27 +28,9 @@
   --gutter: 20px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--nav-height) + 12px);
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-body);
-  color: var(--color-ink);
-  background: var(--color-bg);
-  -webkit-font-smoothing: antialiased;
-}
-
 h1,
 h2,
 h3 {
-  font-family: var(--font-display);
   margin: 0;
 }
 p {
@@ -104,11 +83,15 @@ body {
   display: none;
 }
 
-.topnav__list {
+.topnav .topnav__inner .topnav__list {
   display: flex;
   gap: 4px;
   white-space: nowrap;
   counter-reset: topnav-step;
+  list-style-type: none;
+  padding-left: unset;
+  margin-top: unset;
+  margin-bottom: unset;
 }
 
 .topnav__item {
@@ -139,6 +122,10 @@ body {
 .topnav__item--active .topnav__link {
   color: #019bf0;
   /* background: var(--color-brand-bg); */
+}
+
+topnav__item::marker {
+  display: none;
 }
 
 .topnav__link::before {
@@ -193,7 +180,14 @@ body {
 .section:last-child {
   border-bottom: none;
 }
-
+#use-case,
+#headphones-vs-earphones,
+#wired-vs-wireless,
+#types,
+#features,
+#sound-basics {
+  scroll-margin-top: 50px;
+}
 .section--tinted {
   margin: 0 calc(var(--gutter) * -1);
   padding: 60px 20px;
@@ -202,7 +196,7 @@ body {
   /* border-radius: var(--radius-lg); */
 }
 
-.section__eyebrow {
+.section .section__eyebrow {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -231,15 +225,15 @@ body {
   letter-spacing: 0;
 }
 
-.section__title {
+.section .section__title {
   color: var(--PrimaryTextColor-PrimaryText90, #4c525c);
-  font-size: clamp(24px, 4vw, 26px);
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 8px;
+  font-size: clamp(20px, 4vw, 26px);
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 8px !important;
 }
 
-.section__subtitle {
+.section .section__subtitle {
   font-size: 14px;
   color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
   max-width: 60ch;
@@ -259,34 +253,48 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  background: #fff;
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
 }
 
 .usecase-card__image {
   width: 100%;
   aspect-ratio: 4 / 2.6;
   object-fit: cover;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm) var(--radius-sm) 0px 0px;
 }
-
-.usecase-card__title {
+.usecase-card__content {
+  padding: 7px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 6px;
+}
+.usecase-card .usecase-card__title {
   color: var(--PrimaryTextColor-PrimaryText90, #4c525c);
   font-size: 13px;
   font-weight: 600;
   line-height: 165%;
 }
 
-.usecase-card__desc {
+.usecase-card .usecase-card__desc {
   font-size: 12px;
   color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
   line-height: 1.5;
   font-weight: 400;
+  margin-bottom: unset;
 }
 
-.usecase-card__tags {
+.usecase-card .usecase-card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 4px;
+  list-style-type: none !important;
+  margin-top: auto !important;
+  padding-left: unset;
 }
 
 .usecase-card__tag {
@@ -308,11 +316,10 @@ body {
 }
 
 .compare-card {
-  border-radius: var(--radius-lg);
-  padding: 24px;
+  border-radius: var(--radius-md);
+  background: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
-
 .compare-card--headphones {
   color: var(--color-headphone-ink);
 }
@@ -336,18 +343,18 @@ body {
   margin-bottom: 20px;
   padding: 24px 26px 10px 26px;
   border-bottom: 0.835px solid rgba(0, 0, 0, 0);
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
 }
 
-.compare-card__title {
+.compare-card__header .compare-card__title {
   font-size: 19px;
   font-weight: 600;
   line-height: 135%;
   margin-bottom: 2px;
 }
 
-.compare-card__subtitle {
+.compare-card .compare-card__subtitle {
   font-size: 13px;
   opacity: 0.7;
   margin-bottom: 10px;
@@ -387,10 +394,12 @@ body {
   margin-bottom: 10px;
 }
 
-.compare-card__list {
+.compare-card .compare-card__list {
   display: flex;
   flex-direction: column;
   gap: 9px;
+  list-style-type: none !important;
+  margin-bottom: unset;
 }
 
 .compare-card__list-item {
@@ -400,7 +409,7 @@ body {
   line-height: 1.4;
 }
 
-.compare-card__list-item::before {
+.compare-card .headphone-bullets .compare-card__list-item::before {
   content: "";
   position: absolute;
   left: 0;
@@ -408,7 +417,18 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: currentColor;
+  background: #e7b900;
+  opacity: 0.55;
+}
+.compare-card .earphone-bullets .compare-card__list-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4d6ac9;
   opacity: 0.55;
 }
 .compare-card--earphones .compare-card__header {
@@ -470,14 +490,14 @@ body {
   margin-bottom: 10px;
 }
 
-.vs-card__title {
+.vs-card .vs-card__title {
   color: var(--PrimaryTextColor-PrimaryText90, #4c525c);
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 4px;
 }
 
-.vs-card__desc {
+.vs-card .vs-card__desc {
   color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
   font-weight: 400;
   font-size: 13px;
@@ -485,7 +505,7 @@ body {
   margin-bottom: 14px;
 }
 
-.vs-card__label {
+.vs-card .vs-card__label {
   color: var(--PrimaryTextColor-PrimaryText90, #4c525c);
   font-size: 10px;
   font-weight: 600;
@@ -499,6 +519,7 @@ body {
   font-weight: 500;
   display: flex;
   flex-wrap: wrap;
+  gap: 6px;
 }
 
 .vs-card__tag {
@@ -531,6 +552,8 @@ body {
 }
 
 .type-card {
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border-radius: var(--radius-md);
   /* border: 1px solid var(--color-line); */
@@ -565,6 +588,7 @@ body {
 }
 
 .type-card__tags {
+  margin-top: auto;
   font-size: 10px;
   font-weight: 600;
 }
@@ -881,6 +905,7 @@ body {
   }
   .compare-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 24px;
   }
 }
 
