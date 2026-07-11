@@ -346,7 +346,9 @@ topnav__item::marker {
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
 }
-
+.compare-card .compare-card__content {
+  padding: 0px 26px 24px;
+}
 .compare-card__header .compare-card__title {
   font-size: 19px;
   font-weight: 600;
@@ -400,6 +402,7 @@ topnav__item::marker {
   gap: 9px;
   list-style-type: none !important;
   margin-bottom: unset;
+  padding-left: unset;
 }
 
 .compare-card__list-item {
