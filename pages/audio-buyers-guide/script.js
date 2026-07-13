@@ -1,7 +1,5 @@
 (function () {
-  var navLinks = Array.prototype.slice.call(
-    document.querySelectorAll("[data-nav-link]"),
-  );
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll("[data-nav-link]"));
   var sections = navLinks
     .map(function (link) {
       var id = link.getAttribute("href").slice(1);
@@ -12,9 +10,7 @@
   function setActive(id) {
     navLinks.forEach(function (link) {
       var isActive = link.getAttribute("href") === "#" + id;
-      link
-        .closest(".topnav__item")
-        .classList.toggle("topnav__item--active", isActive);
+      link.closest(".topnav__item").classList.toggle("topnav__item--active", isActive);
     });
   }
 
