@@ -1,3 +1,4 @@
+/* <style> */
 /* ============================
    Tokens
    ============================ */
@@ -51,12 +52,14 @@ dl {
 body {
   overflow-x: hidden !important;
 }
+.banner-buyers-audio-guide {
+  padding: 0px;
+}
 .topnav {
   position: sticky;
-  top: 0;
+  top: 45px;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
+  background: #fff;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -99,15 +102,15 @@ body {
   counter-increment: topnav-step;
 }
 
-.topnav__link {
+.topnav__list .topnav__item .topnav__link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 8px 12px;
   border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-ink-soft);
+  font-size: 12px;
+  font-weight: 500;
+  color: #4c525c;
   text-decoration: none;
   transition:
     color 0.15s ease,
@@ -119,9 +122,8 @@ body {
   background: #f2f8ff;
 }
 
-.topnav__item--active .topnav__link {
+.topnav__list .topnav__item--active .topnav__link {
   color: #019bf0;
-  /* background: var(--color-brand-bg); */
 }
 
 topnav__item::marker {
@@ -177,23 +179,16 @@ topnav__item::marker {
   /* border-bottom: 1px solid var(--color-line); */
 }
 
-.section:last-child {
-  border-bottom: none;
-}
 #use-case,
 #headphones-vs-earphones,
 #wired-vs-wireless,
 #types,
 #features,
 #sound-basics {
-  scroll-margin-top: 50px;
+  scroll-margin-top: 135px;
 }
-.section--tinted {
-  margin: 0 calc(var(--gutter) * -1);
-  padding: 60px 20px;
-  background: var(--color-bg-tint);
+.section:last-child {
   border-bottom: none;
-  /* border-radius: var(--radius-lg); */
 }
 
 .section .section__eyebrow {
@@ -254,9 +249,6 @@ topnav__item::marker {
   flex-direction: column;
   gap: 8px;
   background: #fff;
-  box-shadow:
-    0 1px 3px 0 rgba(0, 0, 0, 0.1),
-    0 1px 2px 0 rgba(0, 0, 0, 0.06);
   border-radius: 12px;
 }
 
@@ -278,6 +270,7 @@ topnav__item::marker {
   font-size: 13px;
   font-weight: 600;
   line-height: 165%;
+  margin: unset;
 }
 
 .usecase-card .usecase-card__desc {
@@ -574,15 +567,16 @@ topnav__item::marker {
   display: block;
 }
 
-.type-card__title {
+.type-card .type-card__title {
   color: var(--PrimaryTextColor-PrimaryText90, #4c525c);
   font-size: 12px;
   font-weight: 600;
   line-height: 165%;
   margin-bottom: 6px;
+  margin-top: 0px;
 }
 
-.type-card__desc {
+.type-card .type-card__desc {
   color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
   font-size: 11px;
   font-weight: 400;
@@ -590,17 +584,17 @@ topnav__item::marker {
   margin-bottom: 10px;
 }
 
-.type-card__tags {
+.type-card .type-card__tags {
   margin-top: auto;
   font-size: 10px;
   font-weight: 600;
 }
 
-.type-card__tag {
+.type-card .type-card__tag {
   color: var(--SecondaryColor-Blue60, #019bf0);
 }
 
-.type-card__dot {
+.type-card .type-card__dot {
   color: var(--SecondaryColor-Blue60, #019bf0);
   margin: 0 5px;
   opacity: 0.5;
@@ -661,16 +655,19 @@ topnav__item::marker {
   aspect-ratio: 1 / 1;
 }
 
-.feature-card__title {
+.feature-card .feature-card__title {
   color: var(--PrimaryTextColor-PrimaryText90, #4c525c);
   font-size: 13px;
   font-weight: 600;
+  margin-top: unset;
+  margin-bottom: unset;
 }
 
-.feature-card__desc {
+unset .feature-card__desc {
   font-size: 13px;
   color: var(--color-ink-soft);
   line-height: 1.5;
+  margin-bottom: unset;
 }
 
 .feature-card__callout {
@@ -714,14 +711,15 @@ topnav__item::marker {
   margin-bottom: 8px;
 }
 
-.spec-card__title {
+.spec-card .spec-card__title {
   color: var(--PrimaryTextColor-PrimaryText90, #4c525c);
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 10px;
+  margin-top: unset;
 }
 
-.spec-card__desc {
+.spec-card .spec-card__desc {
   font-size: 12px;
   font-weight: 400;
   color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
@@ -729,7 +727,7 @@ topnav__item::marker {
   margin-bottom: 8px;
 }
 
-.spec-card__callout {
+.spec-card .spec-card__callout {
   font-size: 10px;
   font-weight: 600;
   color: var(--SecondaryColor-Blue60, #019bf0);
@@ -752,7 +750,7 @@ topnav__item::marker {
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .quick-ref {
@@ -761,7 +759,7 @@ topnav__item::marker {
   padding: 20px;
 }
 
-.quick-ref__title {
+.quick-ref .quick-ref__title {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -811,20 +809,21 @@ topnav__item::marker {
   margin-bottom: 10px;
 }
 
-.cta__title {
+.cta .cta__title {
   font-size: 22px;
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 10px;
+  margin-top: unset;
 }
 
-.cta__desc {
+.cta .cta__desc {
   font-size: 14px;
   line-height: 175%;
   margin-bottom: 28px;
 }
 
-.cta__button {
+.cta .cta__button {
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -837,7 +836,7 @@ topnav__item::marker {
   text-decoration: none;
 }
 
-.cta__button:hover {
+.cta .cta__button:hover {
   background: #f1f5ff;
 }
 
@@ -891,9 +890,14 @@ topnav__item::marker {
   .layout__sidebar {
     flex: 0 0 280px;
     position: sticky;
-    top: calc(var(--nav-height) + 24px);
+    top: calc(var(--nav-height) + 115px);
   }
-
+  .banner-buyers-audio-guide {
+    padding: 32px var(--gutter) 0px;
+  }
+  .topnav {
+    top: 110px;
+  }
   .usecase-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -918,3 +922,5 @@ topnav__item::marker {
     scroll-behavior: auto;
   }
 }
+
+/* </style> */

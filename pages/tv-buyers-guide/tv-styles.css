@@ -3,30 +3,23 @@
    Tokens
    ============================ */
 :root {
-  /* Base */
   --color-white: #fff;
-  /* Text */
   --color-text: #4c525c;
   --color-text-dark: #0f1924;
   --color-text-muted: #767676;
   --color-text-light: #9fa8b5;
-  /* Brand */
   --color-brand: #019bf0;
   --color-brand-dark: #1179f9;
   --color-brand-light: #2f8ff5;
-  /* Backgrounds */
   --color-bg: #ffffff;
   --color-bg-light: #f6f6f6;
   --color-bg-tint: #f6f8fc;
   --color-bg-blue: #f2f8ff;
   --color-bg-blue-soft: #f3fbff;
-  /* Borders */
   --color-line: #e6e9f0;
   --color-border: #f0f0f0;
-  /* Misc */
   --color-ink: #1a1f2c;
   --color-ink-soft: #5b6472;
-  /* Component Colors */
   --color-headphone-bg: #fffce2;
   --color-headphone-ink: #2b2412;
   --color-earphone-bg: #eef2ff;
@@ -35,15 +28,12 @@
   --color-wired-ink: #16233a;
   --color-wireless-bg: #dff2ea;
   --color-wireless-ink: #123227;
-  /* Gradients */
   --gradient-brand: linear-gradient(90deg, var(--color-brand) 0%, var(--color-brand-dark) 100%);
   --gradient-banner: linear-gradient(135deg, #eaf6ff 0%, #dcefff 100%);
   --gradient-cta: linear-gradient(106deg, #1fabf8 6.47%, #a9cef6 117.65%);
-  /* Radius */
   --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 20px;
-  /* Layout */
   --nav-height: 56px;
   --gutter: 20px;
 }
@@ -120,8 +110,6 @@ dl {
   font-size: 12px;
   color: var(--color-text, #4c525c);
 }
-
-/* ---------- Right: overlapping TV images ---------- */
 .banner .tv-stack {
   display: none;
 }
